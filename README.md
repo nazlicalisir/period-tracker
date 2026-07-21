@@ -25,9 +25,6 @@ A modern PHP & MySQL web application for menstrual cycle tracking.
 
 https://regltakip.site.je
 
-## Screenshots
-
-(Add screenshots here)
 
 ## Author
 
