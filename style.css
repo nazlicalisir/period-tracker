@@ -1,0 +1,637 @@
+/* --- TEMA RENK DEĞİŞKENLERİ (Tüm Sayfalar İçin) --- */
+:root {
+    /* Varsayılan (Açık Mod - Light) */
+    --bg-color: #fdfbfd;
+    --text-color: #2d3436;
+    --card-bg: #ffffff;
+    --input-bg: #ffffff;
+    --input-border: #eee;
+    --sidebar-bg: #ffffff;
+    --sidebar-text: #636e72;
+    --muted-text: #636e72;
+    --menu-hover: rgba(232, 67, 147, 0.1);
+}
+
+/* Koyu Mod (Dark) */
+[data-theme="dark"] {
+    --bg-color: #2d3436;
+    --text-color: #dfe6e9;
+    --card-bg: #353b48;
+    --input-bg: #2f3640;
+    --input-border: #4b6584;
+    --sidebar-bg: #353b48;
+    --sidebar-text: #b2bec3;
+    --muted-text: #b2bec3;
+    --menu-hover: rgba(255, 255, 255, 0.1);
+}
+
+/* Genel Ayarlar */
+body { 
+    font-family: 'Quicksand', sans-serif; 
+    background-color: var(--bg-color); 
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease; 
+    margin: 0;
+}
+
+/* Sidebar ve Kartların Renklerini Değişkenlere Bağla */
+.sidebar { background: var(--sidebar-bg); transition: 0.3s; }
+.sidebar a { color: var(--sidebar-text); }
+.sidebar a:hover, .sidebar a.active { background: var(--menu-hover); color: #e84393; }
+
+.write-card, .diary-entry-card, .content-card, .settings-card {
+    background: var(--card-bg);
+    color: var(--text-color);
+    transition: 0.3s;
+}
+
+/* Inputlar */
+input, select, textarea {
+    background-color: var(--input-bg) !important;
+    color: var(--text-color) !important;
+    border-color: var(--input-border) !important;
+}
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;500;600;700&display=swap');
+/* 1. Google Fonts'tan "Quicksand" Fontunu İçe Aktar (Bunu en tepeye yapıştır) */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* 2. Tüm Sayfaya Bu Fontu Uygula */
+body {
+    font-family: 'Quicksand', sans-serif !important; /* !important diğerlerini ezer */
+    background-color: #fdfbfd;
+    color: #444; /* Yazıları simsiyah değil, koyu gri yapalım (göz yormaz) */
+}
+
+/* 3. Başlıkları Biraz Daha Özelleştirelim */
+/* Sadece "Kayıt Ekle" başlığı el yazısı gibi olsun */
+.form-header h2 {
+    font-family: 'Pacifico', cursive;
+    font-weight: 400;
+    color: #e84393; /* Koyu pembe */
+    font-size: 32px; /* Biraz büyütelim */
+}
+h1, h2, h3, .logo {
+    
+    font-weight: 700; /* Başlıklar kalın olsun */
+    letter-spacing: -0.5px; /* Harfleri biraz birbirine yaklaştırır (Modern görünüm) */
+    color: #2d3436;
+}
+
+/* 4. Butonların Yazısını da Güzelleştirelim */
+button, .btn-submit, input, select, textarea {
+    font-family: 'Quicksand', sans-serif !important;
+}
+
+:root {
+    --primary: #ff9a9e;
+    --primary-dark: #e85a71;
+    --primary-light: #fff0f3;
+    --gradient-primary: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    --gradient-sidebar: linear-gradient(180deg, #ffffff 0%, #fff5f7 100%);
+    --text-dark: #444;
+    --text-light: #888;
+    --bg-body: #f8f9fd;
+    --shadow-card: 0 10px 30px rgba(232, 90, 113, 0.08);
+    --radius-soft: 25px; /* Yumuşak köşe standardı */
+}
+
+* { box-sizing: border-box; text-decoration: none; list-style: none; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-dark);
+    background-color: var(--bg-body);
+    /* Hafif puantiye dokusu tüm sayfalara eklendi */
+    background-image: radial-gradient(#ffeef1 10%, transparent 10%);
+    background-size: 40px 40px;
+}
+
+/* ------------------------------------------------ */
+/* --- A. LOGIN & REGISTER (Auth) SAYFALARI --- */
+/* ------------------------------------------------ */
+body.auth-page {
+    background-image: radial-gradient(#ffeef1 20%, transparent 20%), radial-gradient(#fcecfc 20%, transparent 20%);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-card {
+    display: flex;
+    width: 900px;
+    height: 600px;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.auth-visual {
+    flex: 1.2;
+    background: var(--gradient-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.register-visual { background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); }
+
+.auth-visual i { font-size: 80px; margin-bottom: 20px; text-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.auth-visual h2 { font-size: 36px; margin: 0 0 15px; font-weight: 700; }
+.auth-visual p { font-size: 15px; opacity: 0.95; line-height: 1.6; font-weight: 300; }
+
+.auth-form-side {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+}
+
+.auth-form-side h3 { font-size: 28px; color: var(--primary-dark); margin-bottom: 30px; font-weight: 600; }
+
+.input-wrapper { position: relative; margin-bottom: 25px; }
+.input-wrapper i { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: #d1d1d1; transition: 0.3s; }
+.input-wrapper input {
+    width: 100%; padding: 16px 16px 16px 50px;
+    border: 2px solid #f4f4f4; border-radius: 50px;
+    background: #fcfcfc; font-size: 14px; color: #555; outline: none; transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+.input-wrapper input:focus { border-color: var(--primary); background: white; box-shadow: 0 5px 20px rgba(255, 154, 158, 0.1); }
+.input-wrapper input:focus + i { color: var(--primary); }
+
+.btn-submit {
+    width: 100%; padding: 16px; border-radius: 50px; border: none;
+    background: var(--gradient-primary); color: white; font-size: 16px; font-weight: 600;
+    cursor: pointer; margin-top: 10px; box-shadow: 0 10px 20px rgba(255, 154, 158, 0.3); transition: 0.3s;
+}
+.register-btn { background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); }
+.btn-submit:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(255, 154, 158, 0.4); }
+
+.bottom-text { text-align: center; margin-top: 25px; font-size: 13px; color: #999; }
+.bottom-text a { color: var(--primary-dark); font-weight: 600; }
+
+/* ------------------------------------------------ */
+/* --- B. DASHBOARD (PANEL) TASARIMI --- */
+/* ------------------------------------------------ */
+
+/* Sol Menü (Sidebar) */
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background: white;
+    position: fixed;
+    top: 0; left: 0;
+    padding: 40px 25px;
+    box-shadow: 5px 0 30px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.brand {
+    font-size: 24px; font-weight: 700; color: var(--primary-dark);
+    display: flex; align-items: center; gap: 10px; margin-bottom: 50px; padding-left: 10px;
+    letter-spacing: -0.5px;
+}
+
+.menu-item {
+    display: flex; align-items: center; gap: 15px;
+    padding: 16px 20px; color: var(--text-light); border-radius: 15px;
+    font-weight: 500; font-size: 15px; margin-bottom: 10px; transition: 0.3s;
+}
+
+.menu-item i { width: 20px; text-align: center; font-size: 18px; }
+
+.menu-item:hover { background: var(--primary-light); color: var(--primary-dark); transform: translateX(5px); }
+.menu-item.active { background: var(--gradient-primary); color: white; box-shadow: 0 10px 20px rgba(255, 154, 158, 0.3); }
+
+/* Ana İçerik */
+.main-content {
+    margin-left: 280px; padding: 50px; min-height: 100vh;
+}
+
+/* Üst Başlık (Header) */
+.header-welcome {
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;
+}
+.header-welcome h1 { font-size: 28px; margin: 0; color: #333; font-weight: 700; }
+.header-welcome p { color: #888; margin-top: 5px; font-size: 14px; }
+
+/* Kartlar Grid Yapısı */
+.cards-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; margin-bottom: 50px;
+}
+
+.card {
+    background: white; padding: 30px; border-radius: var(--radius-soft);
+    box-shadow: var(--shadow-card); text-align: center; transition: 0.3s; border: 1px solid white;
+}
+.card:hover { transform: translateY(-7px); border-color: #ffeef1; }
+
+.card-icon {
+    width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 15px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px;
+}
+/* Kart Renkleri */
+.c-pink .card-icon { background: #ffeef1; color: #ff9a9e; }
+.c-purple .card-icon { background: #f3e5f5; color: #ab47bc; }
+.c-blue .card-icon { background: #e3f2fd; color: #42a5f5; }
+.c-orange .card-icon { background: #fff3e0; color: #ff9800; }
+
+.card h3 { font-size: 14px; color: #999; text-transform: uppercase; letter-spacing: 1px; margin: 0; }
+.card p { font-size: 26px; font-weight: 700; color: var(--text-dark); margin: 10px 0; }
+.card small { font-size: 13px; color: var(--primary-dark); font-weight: 600; background: #fff0f3; padding: 5px 12px; border-radius: 20px; }
+
+/* Tablo Tasarımı */
+.table-wrapper {
+    background: white; padding: 35px; border-radius: 30px; box-shadow: var(--shadow-card);
+}
+.section-title { font-size: 18px; font-weight: 700; margin-bottom: 25px; color: #444; }
+
+table { width: 100%; border-collapse: separate; border-spacing: 0 10px; }
+th { text-align: left; color: #aaa; font-weight: 600; font-size: 13px; padding: 0 20px; }
+td { background: #fdfdfd; padding: 20px; font-size: 14px; color: #555; border-top: 1px solid #f9f9f9; border-bottom: 1px solid #f9f9f9; }
+td:first-child { border-top-left-radius: 15px; border-bottom-left-radius: 15px; border-left: 1px solid #f9f9f9; }
+td:last-child { border-top-right-radius: 15px; border-bottom-right-radius: 15px; border-right: 1px solid #f9f9f9; }
+
+tr:hover td { background: white; transform: scale(1.01); box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: 0.2s; }
+
+/* Aksiyon Butonları */
+.btn-action {
+    display: inline-flex; width: 35px; height: 35px; border-radius: 10px;
+    align-items: center; justify-content: center; transition: 0.2s;
+}
+.btn-edit { background: #e3f2fd; color: #2196f3; margin-right: 5px; }
+.btn-delete { background: #ffebee; color: #f44336; }
+.btn-file { color: #ff9a9e; font-weight: 600; display: flex; align-items: center; gap: 5px; }
+.btn-file:hover { text-decoration: underline; }
+
+.btn-add-new {
+    background: var(--gradient-primary); color: white; padding: 12px 30px;
+    border-radius: 50px; font-weight: 600; box-shadow: 0 8px 20px rgba(255, 154, 158, 0.4);
+    display: inline-flex; align-items: center; gap: 10px; transition: 0.3s;
+}
+.btn-add-new:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(255, 154, 158, 0.5); }
+
+/* Animasyonlar */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------------------------------ */
+/* --- C. FORM & DÜZENLEME SAYFALARI (MODERN) --- */
+/* ------------------------------------------------ */
+.edit-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-card {
+    background: white;
+    padding: 40px;
+    border-radius: var(--radius-soft);
+    box-shadow: var(--shadow-card);
+    animation: fadeInUp 0.5s;
+}
+
+.form-group { margin-bottom: 20px; }
+.form-group label {
+    display: block; margin-bottom: 8px; font-weight: 600; color: #555; font-size: 14px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #f0f0f0;
+    border-radius: 12px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+    background: #fdfdfd;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    outline: none;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(255, 154, 158, 0.1);
+}
+
+textarea.form-control { resize: vertical; }
+
+.btn-save {
+    width: 100%;
+    background: var(--gradient-primary);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 10px;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.btn-save:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 154, 158, 0.3);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center; gap: 8px;
+    margin-bottom: 20px;
+    color: var(--text-light);
+    font-weight: 500;
+    transition: 0.3s;
+}
+.back-link:hover { color: var(--primary); transform: translateX(-5px); }
+
+/* Mevcut Dosya Gösterimi */
+.current-file {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 10px;
+    border: 1px dashed #ddd;
+}
+
+/* ------------------------------------------------ */
+/* --- D. DİĞER BİLEŞENLER (Mood, Günlük vb.) --- */
+/* ------------------------------------------------ */
+
+/* Mood Seçim Alanı */
+.mood-section {
+    background: #fff5f7;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    border: 1px solid #ffe0e6;
+}
+.mood-question { margin-bottom: 15px; }
+.mood-question label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 8px; color: #555; }
+.range-slider { width: 100%; accent-color: #ff9a9e; cursor: pointer; }
+
+/* Test Sonucu Kutusu */
+.mood-result-box {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px dashed #ff9a9e;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #e85a71;
+    display: none;
+    animation: fadeInUp 0.5s;
+}
+
+/* Dosya Yükleme Alanı Özelleştirme */
+.custom-file-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border: 2px dashed #d1d1d1;
+    border-radius: 20px;
+    background: #fdfdfd;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
+.custom-file-upload:hover { border-color: #ff9a9e; background: #fff0f3; }
+.custom-file-upload i { font-size: 30px; color: #ff9a9e; margin-bottom: 10px; }
+
+/* Dashboard Özeti Kartı */
+.cycle-summary-card {
+    background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); /* Mor-Pembe geçiş */
+    color: white;
+    padding: 30px;
+    border-radius: 25px;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(161, 140, 209, 0.4);
+}
+.cycle-summary-card h2 { margin: 0 0 10px; font-size: 24px; font-weight: 700; }
+.cycle-summary-card p { font-size: 15px; opacity: 0.95; line-height: 1.6; }
+.cycle-summary-card .close-btn {
+    position: absolute; top: 15px; right: 20px; cursor: pointer; color: white; opacity: 0.7; font-size: 20px; transition: 0.2s;
+}
+.cycle-summary-card .close-btn:hover { opacity: 1; transform: scale(1.1); }
+
+/* --- GÜNLÜK SAYFASI STİLLERİ --- */
+.diary-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.write-card {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: var(--shadow-card);
+    position: sticky;
+    top: 20px;
+}
+
+.entries-area {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.diary-entry-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    position: relative;
+    border-left: 5px solid #ff9a9e;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    transition: transform 0.2s;
+}
+.diary-entry-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+}
+
+.entry-date-badge {
+    background: #fff0f3;
+    color: #e85a71;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.entry-title { font-size: 18px; color: #444; margin: 0 0 10px 0; font-weight: 700; }
+.entry-content { color: #666; line-height: 1.6; font-size: 14px; white-space: pre-line; }
+.delete-diary-btn {
+    position: absolute; top: 20px; right: 20px; color: #fab1a0; cursor: pointer; transition: 0.3s;
+}
+.delete-diary-btn:hover { color: #e85a71; }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .sidebar { width: 70px; padding: 20px 10px; }
+    .sidebar .brand span, .menu-item span { display: none; }
+    .sidebar .brand { justify-content: center; padding: 0; }
+    .menu-item { justify-content: center; padding: 15px; }
+    .main-content { margin-left: 70px; padding: 20px; }
+    .diary-container { flex-direction: column; }
+    .write-card { position: static; width: 100%; }
+}
+/* --- KAYIT EKLEME SAYFASI TASARIMI --- */
+
+/* Ana Arka Plan */
+body {
+    background-color: #fdfbfd; /* Çok açık pembe zemin */
+    font-family: 'Poppins', sans-serif; /* Modern yazı tipi */
+}
+
+/* Formun Ortadaki Kartı */
+.form-container {
+    background: #ffffff;
+    max-width: 550px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(255, 105, 180, 0.1); /* Hafif pembe gölge */
+    position: relative;
+}
+
+/* Başlık Kısmı */
+.form-header h2 {
+    color: #2d3436;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.form-header p {
+    color: #b2bec3;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* Giriş Kutuları (Input) */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #636e72;
+    font-size: 14px;
+}
+
+.form-group input[type="date"],
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea,
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #f1f2f6;
+    border-radius: 15px;
+    background: #fdfdfd;
+    font-size: 14px;
+    color: #2d3436;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Kutunun taşmasını engeller */
+}
+
+/* Tıklayınca Çerçevenin Rengi Değişsin */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #fda7df;
+    outline: none;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(253, 167, 223, 0.1);
+}
+
+/* Range Slider (Ağrı Seviyesi Çubuğu) */
+input[type=range] {
+    width: 100%;
+    accent-color: #ff7675; /* Çubuğun rengi */
+    cursor: pointer;
+}
+
+/* --- BELİRTİ SEÇİM KUTUCUKLARI (ÖZEL TASARIM) --- */
+/* Bu kısım inline style'ları ezecek ve modernleştirecek */
+
+.symptom-labels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Kutucukların kendisi */
+.form-group label[style] { 
+    /* style attribute'ü olan etiketleri hedefliyoruz */
+    background: #fff !important;
+    border: 2px solid #eee !important;
+    border-radius: 15px !important;
+    padding: 10px 20px !important;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 13px;
+    color: #555;
+    font-weight: 500 !important;
+}
+
+/* Fare üzerine gelince */
+.form-group label[style]:hover {
+    border-color: #fda7df !important;
+    color: #e84393;
+    transform: translateY(-2px);
+}
+
+/* KAYDET BUTONU */
+.btn-submit {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 10px 20px rgba(255, 154, 158, 0.3);
+    transition: transform 0.2s;
+}
+
+.btn-submit:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(255, 154, 158, 0.4);
+}

@@ -1,0 +1,4 @@
+db.php
+uploads/*
+!uploads/.gitkeep
+*.sql
